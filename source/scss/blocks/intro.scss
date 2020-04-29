@@ -86,6 +86,10 @@
   }
 }
 
+.screen--intro.active .intro__message {
+  @include fadeIn;
+}
+
 .intro__message {
   flex: none;
   width: 50.9rem;
