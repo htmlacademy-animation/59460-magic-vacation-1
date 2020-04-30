@@ -48,6 +48,7 @@
   &:nth-child(2) {
     .slider__item-text {
       margin-top: 7.8rem;
+      animation-delay: 200ms;
 
       @media (min-width: $stop-scaling) {
         margin-top: 78px;
@@ -122,6 +123,10 @@
     font-size: 1.4rem;
     line-height: 1.5rem;
   }
+}
+
+.screen--story.active .slider__item-text {
+  @include fadeLeft;
 }
 
 .slider__controls {

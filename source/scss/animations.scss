@@ -1,0 +1,38 @@
+@keyframes fadeIn {
+	from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+	to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+	}
+}
+
+@keyframes fadeLeft {
+	from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(25px);
+  }
+
+	to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+	}
+}
+
+@keyframes increaseWidth {
+	from {
+    width: 0;
+  }
+
+	to {
+    width: calc(100% - 21rem);
+	}
+}
+

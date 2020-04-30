@@ -58,3 +58,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin fadeIn {
+  animation: fadeIn 500ms ease-out;
+}
+
+@mixin fadeLeft {
+  animation: fadeLeft 500ms ease-out;
+}

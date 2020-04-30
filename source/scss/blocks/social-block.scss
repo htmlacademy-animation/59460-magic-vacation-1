@@ -1,3 +1,6 @@
+$duration: 350ms;
+$easing: ease-in-out;
+
 .social-block {
   position: relative;
 
@@ -35,6 +38,9 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition-property: width, height, border;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
   }
 
   svg {
@@ -42,6 +48,7 @@
     display: block;
     width: 2.3rem;
     height: 2.2rem;
+    transition: color $duration $easing;
   }
 
   &:hover,
@@ -89,6 +96,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: opacity $duration $easing;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -145,6 +153,12 @@
   li {
     flex: none;
     margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition-property: opacity, transform;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
+    transition-delay: 0ms, $duration;
 
     @media (min-width: $stop-scaling) {
       margin-bottom: 5px;
@@ -160,7 +174,31 @@
   }
 }
 
+.social-block--active {
+  .social-block__list {
+    transition: opacity 0ms;
+  }
+
+  li {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-property: transform, opacity;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
+    transition-delay: 0ms;
+    &:nth-child(2) {
+      transition-delay: 100ms;
+    }
+    &:nth-child(3) {
+      transition-delay: 200ms;
+    }
+  }
+}
+
 .social-block__link {
+  $duration: 350ms;
+  $easing: $easing;
+
   position: relative;
   display: block;
   width: 4rem;
@@ -168,6 +206,10 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+
+  transition-property: background-color, color, border;
+  transition-duration: $duration;
+  transition-timing-function: $easing;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
