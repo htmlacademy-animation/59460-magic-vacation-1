@@ -824,31 +824,47 @@ button.swiper-pagination-bullet {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
 
-@keyframes fadeIn {
+@keyframes fade-in {
   from {
     visibility: hidden;
     opacity: 0;
-    transform: translateY(25px); }
+    transform: translateY(2rem); }
   to {
     visibility: visible;
     opacity: 1;
     transform: translateY(0); } }
 
-@keyframes fadeLeft {
+@keyframes fade-left {
   from {
     visibility: hidden;
     opacity: 0;
-    transform: translateX(25px); }
+    transform: translateX(2rem); }
   to {
     visibility: visible;
     opacity: 1;
     transform: translateX(0); } }
 
-@keyframes increaseWidth {
+@keyframes increase-width {
   from {
     width: 0; }
   to {
     width: calc(100% - 21rem); } }
+
+@keyframes scale-social-btn {
+  from {
+    transform: translate(-50%, -50%) scale(0); }
+  to {
+    transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes active-item-menu {
+  from {
+    left: 0;
+    right: auto;
+    width: 0; }
+  to {
+    left: 0;
+    right: auto;
+    width: 100%; } }
 
 @font-face {
   font-family: "Proxima Nova";
@@ -1298,7 +1314,7 @@ img {
   border: 0;
   border-radius: 3rem;
   outline: none;
-  animation: increaseWidth 1s ease-in-out forwards; }
+  animation: increase-width 1s ease-in-out forwards; }
   .form__field:focus {
     border: 1px solid #a67ee5; }
   @media (min-width: 2000px) {
@@ -1555,7 +1571,7 @@ img {
       display: none; } }
 
 .screen--intro.active .intro__message {
-  animation: fadeIn 500ms ease-out; }
+  animation: fade-in 500ms ease-out; }
 
 .intro__message {
   flex: none;
@@ -1661,7 +1677,7 @@ img {
   padding: 1rem 0;
   width: 10rem;
   color: #ffffff;
-  transform: translateX(-20px);
+  transform: translateX(-1.5rem);
   opacity: 0;
   transition-property: transform, opacity;
   transition-duration: 700ms;
@@ -1849,13 +1865,12 @@ img {
     .page-header__menu a::after {
       content: "";
       position: absolute;
-      left: 0;
+      right: 0;
       bottom: 0;
-      width: 100%;
+      width: 0;
       height: 2px;
       background-color: #ffffff;
-      transform: translateX(-100%);
-      transition-property: background-color, transform;
+      transition-property: background-color, width;
       transition-duration: 350ms;
       transition-timing-function: ease-in-out; }
       @media (min-width: 2000px) {
@@ -1873,13 +1888,18 @@ img {
           right: 0;
           background-color: #5f458c; } }
     .page-header__menu a.active::after {
-      transform: translateX(0); }
+      width: 100%; }
     .page-header__menu a:hover, .page-header__menu a:focus {
       color: #a67ee5;
       outline: none; }
       .page-header__menu a:hover::after, .page-header__menu a:focus::after {
-        background-color: #a67ee5;
-        transform: translateX(0); }
+        left: 0;
+        right: auto;
+        width: 100%;
+        background-color: #a67ee5; }
+
+.loaded .page-header__menu .active::after {
+  animation: active-item-menu 350ms ease-in-out 400ms both; }
 
 .page-header__social {
   margin-left: 4.8rem; }
@@ -2904,13 +2924,13 @@ img {
       flex-direction: column;
       padding: 5rem 2rem 0 5rem; } }
   .slider__item:nth-child(even) .slider__item-text {
-    align-self: flex-end; }
+    align-self: flex-end;
+    animation-delay: 200ms; }
     @media (max-width: 768px) and (orientation: landscape) {
       .slider__item:nth-child(even) .slider__item-text {
         align-self: flex-start; } }
   .slider__item:nth-child(2) .slider__item-text {
-    margin-top: 7.8rem;
-    animation-delay: 200ms; }
+    margin-top: 7.8rem; }
     @media (min-width: 2000px) {
       .slider__item:nth-child(2) .slider__item-text {
         margin-top: 78px; } }
@@ -2974,7 +2994,10 @@ img {
       line-height: 1.5rem; } }
 
 .screen--story.active .slider__item-text {
-  animation: fadeLeft 500ms ease-out; }
+  animation: fade-left 500ms ease-out backwards; }
+
+.screen--story.active .slider__item:nth-child(2) .slider__item-text {
+  animation-delay: 200ms; }
 
 .slider__controls {
   position: absolute;
@@ -3181,6 +3204,9 @@ img {
       background-color: #a67ee5;
       border-color: #a67ee5; }
 
+.loaded .social-block__toggler::before {
+  animation: scale-social-btn 400ms cubic-bezier(0.34, 1.56, 0.64, 1) 500ms backwards; }
+
 .social-block__list {
   padding: 0;
   margin: 0;
@@ -3236,7 +3262,7 @@ img {
     flex: none;
     margin-bottom: 0.5rem;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(1rem);
     transition-property: opacity, transform;
     transition-duration: 350ms;
     transition-timing-function: ease-in-out;
