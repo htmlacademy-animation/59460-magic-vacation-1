@@ -1,8 +1,8 @@
-@keyframes fadeIn {
+@keyframes fade-in {
 	from {
     visibility: hidden;
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(2rem);
   }
 
 	to {
@@ -12,11 +12,11 @@
 	}
 }
 
-@keyframes fadeLeft {
+@keyframes fade-left {
 	from {
     visibility: hidden;
     opacity: 0;
-    transform: translateX(25px);
+    transform: translateX(2rem);
   }
 
 	to {
@@ -26,7 +26,7 @@
 	}
 }
 
-@keyframes increaseWidth {
+@keyframes increase-width {
 	from {
     width: 0;
   }
@@ -36,3 +36,26 @@
 	}
 }
 
+@keyframes scale-social-btn {
+	from {
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+	to {
+    transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@keyframes active-item-menu {
+	from {
+    left: 0;
+    right: auto;
+    width: 0;
+  }
+
+	to {
+    left: 0;
+    right: auto;
+    width: 100%;
+	}
+}
