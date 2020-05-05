@@ -1,0 +1,34 @@
+// @keyframes scale-screen-background {
+// 	from {
+//     transform: scaleY(0);
+//   }
+
+// 	to {
+//     transform: scaleY(1);
+// 	}
+// }
+
+.screen--intro.active ~ .screen-background,
+.screen--story.active ~ .screen-background {
+  transform: scaleY(0);
+}
+
+.screen--intro.active ~ .screen-background {
+  transition: none;
+}
+
+.screen-background {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $c-dark;
+  transform: scaleY(1);
+  transform-origin: 50% 100%;
+  transition: transform 350ms ease-out;
+}
+
+
+
