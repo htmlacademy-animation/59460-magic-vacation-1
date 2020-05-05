@@ -88,6 +88,14 @@ $easing: ease-in-out;
   }
 }
 
+.loaded .social-block__toggler {
+  &::before {
+    animation: scale-social-btn 400ms cubic-bezier(0.34, 1.56, 0.64, 1) 500ms backwards;
+  }
+}
+
+
+
 .social-block__list {
   @include list-reset;
   position: absolute;
@@ -154,7 +162,7 @@ $easing: ease-in-out;
     flex: none;
     margin-bottom: 0.5rem;
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(1rem);
     transition-property: opacity, transform;
     transition-duration: $duration;
     transition-timing-function: $easing;

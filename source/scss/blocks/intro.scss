@@ -87,7 +87,7 @@
 }
 
 .screen--intro.active .intro__message {
-  @include fadeIn;
+  @include fade-in;
 }
 
 .intro__message {
