@@ -1,13 +1,3 @@
-// @keyframes scale-screen-background {
-// 	from {
-//     transform: scaleY(0);
-//   }
-
-// 	to {
-//     transform: scaleY(1);
-// 	}
-// }
-
 .screen--intro.active ~ .screen-background,
 .screen--story.active ~ .screen-background {
   transform: scaleY(0);
