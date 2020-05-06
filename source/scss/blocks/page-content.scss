@@ -1,23 +1,19 @@
-.screen--intro.active ~ .screen-background,
-.screen--story.active ~ .screen-background {
-  transform: scaleY(0);
-}
-
-.screen--intro.active ~ .screen-background {
-  transition: none;
+.backgroun-active .screen-background {
+  transform: scaleY(1);
 }
 
 .screen-background {
   content: "";
   position: absolute;
+  z-index: 1;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: $c-dark;
-  transform: scaleY(1);
+  transform: scaleY(0);
   transform-origin: 50% 100%;
-  transition: transform 350ms ease-out;
+  transition: transform 400ms ease-out;
 }
 
 
