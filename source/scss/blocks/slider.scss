@@ -39,6 +39,7 @@
   &:nth-child(even) {
     .slider__item-text {
       align-self: flex-end;
+      animation-delay: 200ms;
 
       @media (max-width: $mobile) and (orientation: landscape) {
         align-self: flex-start;
@@ -122,6 +123,18 @@
     min-height: 14rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+  }
+}
+
+.screen--story.active .slider__item-text {
+  @include fade-left;
+}
+
+.screen--story.active .slider__item {
+  &:nth-child(2) {
+    .slider__item-text {
+      animation-delay: 200ms;
+    }
   }
 }
 
