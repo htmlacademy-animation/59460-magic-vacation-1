@@ -11,4 +11,4 @@ build/
 node_modules/
 npm-debug.*
 Thumbs.db
-preview.mp4
+_materials/
