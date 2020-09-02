@@ -162,12 +162,52 @@
   }
 }
 
+$angle: 180deg;
+$translateX: 8rem;
+
+@keyframes show-button-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-$translateX) rotate(-$angle);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes show-button-right {
+  0% {
+    opacity: 0;
+    transform: translateX($translateX) rotate($angle);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.active .slider__control {
+  animation-play-state: running;
+}
+
 .slider__control {
   @include btn-reset;
   position: relative;
   width: 4rem;
   height: 4rem;
   color: $c-dark;
+  animation: show-button-left 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both paused;
+
+  &--prev {
+    animation-name: show-button-left;
+  }
+
+  &--next {
+    animation-name: show-button-right;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
